@@ -6,25 +6,7 @@
         xmlns:local="clr-namespace:BanAdmin"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Name="pnlMainGrid" MouseUp="pnlMainGrid_MouseUp" Background="Black">
-
-
-        <Border BorderThickness="3" BorderBrush="Green" Margin="44,57,602,212"/>
-
-
-        <Border BorderThickness="3" BorderBrush="Green" Margin="313,57,0,63" HorizontalAlignment="Left" Width="346"/>
-
-
-
-        <Button Content="Create ban" HorizontalAlignment="Left" Margin="65,76,0,0" VerticalAlignment="Top" Height="28" Width="111" Click ="CreateBan"/>
-        <Button Content="Ban overview" HorizontalAlignment="Left" Margin="65,109,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenOverview"/>
-        <Button Content="Print report" HorizontalAlignment="Left" Margin="65,142,0,0" VerticalAlignment="Top" Height="28" Width="111" Click ="PrintReport"/>
-        <Button Content="Config" HorizontalAlignment="Left" Margin="65,175,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenConfig"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="357,71,0,0" Text="Notifications" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="575,76,0,0" Text="Bans:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="627,78,0,0" Text="#" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
-
-
+    <Grid Name="pnlMainGrid">
 
     </Grid>
 </Window>

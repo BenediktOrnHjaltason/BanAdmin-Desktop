@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
-using Microsoft.EntityFrameworkCore;
 
 namespace BanAdmin
 {
@@ -22,55 +21,11 @@ namespace BanAdmin
     /// </summary>
     public partial class MainWindow : Window
     {
-        BanAdminDBContext activeContext = null;
-
         public MainWindow()
         {
             InitializeComponent();
 
-            activeContext = new BanAdminDBContext();
-            
-
-            DBContextSeeder.Seed(activeContext);
-
-        }
-
-        private void PrintLoginDetails()
-        {
-            foreach (BanAdminDBContext.LoginDetails login in activeContext.loginDetails)
-                Debug.WriteLine("Username: " + login.username + ". Password: " + login.password);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void pnlMainGrid_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
-        }
-
-        private void CreateBan(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("You clicked CreateBan");
-
-            PrintLoginDetails();
-        }
-
-        private void OpenOverview(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("You clicked Overview");
-        }
-
-        private void PrintReport(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("You clicked PrintReport");
-        }
-
-        private void OpenConfig(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("You clicked Config!");
+            Debug.WriteLine("MAIN WINDOW CONSTRUCTOR CALLED!");
         }
     }
 }

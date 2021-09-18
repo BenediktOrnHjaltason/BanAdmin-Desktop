@@ -13,12 +13,35 @@ namespace BanAdmin
 {
     public class BanAdminDBContext : DbContext
     {
+        public static BanAdminDBContext activeContext = null;
+
         public DbSet<LoginDetails> loginDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"DataSource=mydatabase.db;");
         }
+
+        public static void Initialize()
+        {
+            activeContext = new BanAdminDBContext();
+            activeContext.Database.EnsureCreated();
+        }
+
+        public static bool ValidateLoginAttempt(string username, string password)
+        {
+            foreach (LoginDetails login in activeContext.loginDetails)
+            {
+                if (username == login.username)
+                {
+                    if (password == login.password) return true;
+                }
+                else continue;
+            }
+
+            return false;
+        }
+
 
         [Table("Login")]
         public class LoginDetails
@@ -35,8 +58,9 @@ namespace BanAdmin
     {
         public static void Seed(BanAdminDBContext context)
         {
+            /*
             context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            
 
             context.loginDetails.Add(new BanAdminDBContext.LoginDetails()
             {
@@ -45,6 +69,7 @@ namespace BanAdmin
             }) ;
 
             context.SaveChanges();
+            */
         }
     }
 }
