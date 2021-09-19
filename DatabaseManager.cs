@@ -19,7 +19,7 @@ namespace BanAdmin
 
         public DbSet<LoginDetails> loginDetails { get; set; }
         public DbSet<Ban> Bans { get; set; }
-        //public DbSet<Incident> Incidents { get; set; }
+        public DbSet<Incident> Incidents { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -44,6 +44,14 @@ namespace BanAdmin
             {
                 Debug.WriteLine("BAN: KEY: " + ban.ID + ". First name = " + ban.FirstName + ". Last name = " + ban.LastName + " " + ban.DescriptionOfPerson + " " + ban.BanStart.ToString() + " " + (ban.BanEnd == DateTime.MinValue ? ban.BanEnd.ToString() : "Ban End is NULL"));
             }
+
+            foreach(Incident incident in activeContext.Incidents)
+            {
+                Debug.WriteLine("INCIDENT: Key: " + incident.ID + ". Date and time: " + incident.DateAndTime + ". Description: " + incident.Description + ". Involved persons:");
+
+                if (incident.InvolvedBannedPersonIDs != null) for (int i = 0; i < incident.InvolvedBannedPersonIDs.Length; i++) Debug.WriteLine(incident.InvolvedBannedPersonIDs[i]);
+            }
+            
         }
 
         
@@ -89,21 +97,22 @@ namespace BanAdmin
 
         }
         
-        /*
+        
         [Table("Incident")]
         public class Incident
         {
-            [Key]
+            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public short ID { get; set; }
 
+            [Required]
             public DateTime DateAndTime { get; set; }
 
-            [MaxLength(1500)]
+            [Required, MaxLength(1500)]
             public string Description { get; set; }
 
-            public List<short> InvolvedBannedPersonIDs { get; set; }
+            public string InvolvedBannedPersonIDs { get; set; }
         }
-        */
+        
     }
 
     public static class DBContextSeeder 
@@ -116,23 +125,35 @@ namespace BanAdmin
                 Username = "1", 
                 Password = "2"
             }) ;
-            
+            */
 
 
             context.Bans.Add(new BanAdminDBContext.Ban()
             {
-                FirstName = "Franky",
-                LastName = "Powers",
-                DescriptionOfPerson = "Tall and fat like a pig",
-                BanStart = new DateTime(2021, 6, 10),
-                BanEnd = DateTime.MinValue,
+                FirstName = "Bobby",
+                LastName = "Socks",
+                DescriptionOfPerson = "Small and skinny Bob",
+                BanStart = new DateTime(20, 6, 10),
+                BanEnd = new DateTime(22, 3, 5),
                 BanType = (byte)Enums.BanType.NOTALLOWEDONPROPERTY,
-                CustomBanDescription = null
+                CustomBanDescription = "DONT LET HIM TOUCH THE WOMEN"
             }) ;
+
+            List<short> temp = new List<short>();
+            temp.Add(1);
+            temp.Add(2);
+
+            context.Incidents.Add(new BanAdminDBContext.Incident()
+            {
+                DateAndTime = new DateTime(20, 6, 2),
+                Description = "He yelled in the face of the bar maid",
+                InvolvedBannedPersonIDs = "123"
+
+            });
 
             context.SaveChanges();
 
-            */
+            
         }
     }
 
