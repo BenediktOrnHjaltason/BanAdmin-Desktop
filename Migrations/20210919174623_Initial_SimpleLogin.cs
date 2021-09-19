@@ -2,7 +2,7 @@
 
 namespace BanAdmin.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initial_SimpleLogin : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,7 @@ namespace BanAdmin.Migrations
                 columns: table => new
                 {
                     Username = table.Column<string>(type: "TEXT", nullable: false),
-                    Password = table.Column<string>(type: "TEXT", nullable: true)
+                    Password = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

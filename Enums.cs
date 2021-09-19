@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanAdmin
 {
-    public class Enums
+    public static class Enums
     {
         public enum Gender
         {
@@ -14,9 +14,8 @@ namespace BanAdmin
 
         public enum BanType
         {
-            NOENTRANCE,
+            NOTALLOWEDONPROPERTY,
             OTHER
         }
-
     }
 }

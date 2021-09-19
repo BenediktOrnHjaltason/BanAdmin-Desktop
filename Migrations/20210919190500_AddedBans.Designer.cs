@@ -3,14 +3,16 @@ using System;
 using BanAdmin;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BanAdmin.Migrations
 {
     [DbContext(typeof(BanAdminDBContext))]
-    partial class BanAdminDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210919190500_AddedBans")]
+    partial class AddedBans
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

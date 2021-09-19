@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BanAdmin.Migrations
 {
     [DbContext(typeof(BanAdminDBContext))]
-    [Migration("20210919094952_Initial")]
-    partial class Initial
+    [Migration("20210919174623_Initial_SimpleLogin")]
+    partial class Initial_SimpleLogin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,7 @@ namespace BanAdmin.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Username");
