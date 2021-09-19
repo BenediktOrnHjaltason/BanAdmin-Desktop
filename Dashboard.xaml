@@ -22,9 +22,9 @@
         <Button Content="Ban overview" HorizontalAlignment="Left" Margin="65,109,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenOverview"/>
         <Button Content="Print report" HorizontalAlignment="Left" Margin="65,142,0,0" VerticalAlignment="Top" Height="28" Width="111" Click ="PrintReport"/>
         <Button Content="Config" HorizontalAlignment="Left" Margin="65,175,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenConfig"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="357,71,0,0" Text="Notifications" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="575,76,0,0" Text="Bans:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left"  Margin="627,78,0,0" Text="#" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Right"  Margin="0,71,331,0" Text="Notifications" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Right"  Margin="0,76,190,0" Text="Bans:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Right"  Margin="0,78,167,0" Text="#" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
 
 
 

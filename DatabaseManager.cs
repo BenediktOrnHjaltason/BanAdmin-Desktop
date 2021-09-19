@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BanAdmin
 {
@@ -26,31 +27,40 @@ namespace BanAdmin
         {
             activeContext = new BanAdminDBContext();
             activeContext.Database.EnsureCreated();
+
         }
-
-        public static bool ValidateLoginAttempt(string username, string password)
-        {
-            foreach (LoginDetails login in activeContext.loginDetails)
-            {
-                if (username == login.username)
-                {
-                    if (password == login.password) return true;
-                }
-                else continue;
-            }
-
-            return false;
-        }
-
 
         [Table("Login")]
         public class LoginDetails
         {
             [Key]
-            public string username { get; set; }
-            public string password { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
 
         }
+
+        /*
+        [Table("Ban")]
+        public class Ban
+        {
+            [Key]
+            public int ID { get; set; }
+
+            public DateTime BanStart { get; set; }
+
+            public DateTime BanEnd { get; set; }
+
+            
+
+            [MaxLength(20)]
+            public string FirstName { get; set; }
+
+            [MaxLength(20)]
+            public string LastName { get; set; }
+
+
+        }
+        */
 
     }
 

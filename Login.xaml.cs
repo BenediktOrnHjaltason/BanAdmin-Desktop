@@ -23,10 +23,6 @@ namespace BanAdmin
         public Login()
         {
             InitializeComponent();
-
-            BanAdminDBContext.Initialize();
-
-            Debug.WriteLine("LOGIN CONSTRUCTOR CALLED!");
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -36,11 +32,19 @@ namespace BanAdmin
 
         private void AttemptLogin(object sender, RoutedEventArgs e)
         {
-            if (BanAdminDBContext.ValidateLoginAttempt(Input_Username.Text, Input_Password.Text))
+            foreach (BanAdminDBContext.LoginDetails login in BanAdminDBContext.activeContext.loginDetails)
             {
-                Application.Current.MainWindow.Content = new Dashboard();
+                if (Input_Username.Text == login.Username && Input_Password.Text == login.Password)
+                {
+                    Application.Current.MainWindow.Content = new Dashboard();
+                    return;
+                }
+                    
+                else continue;
             }
-            else MessageBox.Show("Invalid login");
+
+            MessageBox.Show("Invalid login");
+
         }
     }
 }
