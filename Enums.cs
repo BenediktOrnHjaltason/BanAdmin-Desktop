@@ -6,16 +6,16 @@ namespace BanAdmin
 {
     public static class Enums
     {
-        public enum Gender
+        public enum EGender
         {
-            MALE,
-            FEMALE
+            Male,
+            Female
         }
 
-        public enum BanType
+        public enum EBanType
         {
-            NOTALLOWEDONPROPERTY,
-            OTHER
+            BannedFromProperty,
+            DenyHardLiquour,
         }
     }
 }

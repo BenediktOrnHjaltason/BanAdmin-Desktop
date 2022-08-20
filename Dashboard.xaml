@@ -11,20 +11,22 @@
     <Grid Name="pnlMainGrid" Background="Black">
 
 
-        <Border BorderThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Green" Margin="44,57,0,0" Width="157" Height="168"/>
+        <Border BorderThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Green" Margin="44,57,0,0" Width="176" Height="272"/>
 
 
-        <Border BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="Green" Margin="0,57,125,0"  Width="346" Height="292"/>
+        <Border BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" BorderBrush="Green" Margin="0,57,125,0"  Width="346" Height="272"/>
 
 
 
-        <Button Content="Create ban" HorizontalAlignment="Left" Margin="65,76,0,0" VerticalAlignment="Top" Height="28" Width="111" Click ="CreateBan"/>
-        <Button Content="Ban overview" HorizontalAlignment="Left" Margin="65,109,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenOverview"/>
-        <Button Content="Print report" HorizontalAlignment="Left" Margin="65,142,0,0" VerticalAlignment="Top" Height="28" Width="111" Click ="PrintReport"/>
-        <Button Content="Config" HorizontalAlignment="Left" Margin="65,175,0,0" VerticalAlignment="Top" Height="28" Width="111" Click = "OpenConfig"/>
+        <Button Content="Create ban" HorizontalAlignment="Left" Margin="65,76,0,0" VerticalAlignment="Top" Height="35" Width="136" Click ="CreateBan" FontSize="16"/>
+        <Button Content="Register incident" HorizontalAlignment="Left" Margin="65,117,0,0" VerticalAlignment="Top" Height="35" Width="136" Click = "OpenOverview" FontSize="16"/>
+        <Button Content="Overview" HorizontalAlignment="Left" Margin="65,192,0,0" VerticalAlignment="Top" Height="35" Width="136" Click = "RegisterIncident" FontSize="16"/>
+        <Button Content="Print report" HorizontalAlignment="Left" Margin="65,233,0,0" VerticalAlignment="Top" Height="35" Width="136" Click ="PrintReport" FontSize="16"/>
+        <Button Content="Config" HorizontalAlignment="Left" Margin="65,274,0,0" VerticalAlignment="Top" Height="35" Width="136" Click = "OpenConfig" FontSize="16"/>
         <TextBlock HorizontalAlignment="Right"  Margin="0,71,331,0" Text="Notifications" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold" FontSize="16"/>
         <TextBlock HorizontalAlignment="Right"  Margin="0,76,190,0" Text="Bans:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Right"  Margin="0,78,167,0" Text="#" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF35BF0D" FontFamily="Toxigenesis Rg" FontWeight="Bold"/>
+
 
 
 

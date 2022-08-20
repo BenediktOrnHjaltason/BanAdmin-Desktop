@@ -1,0 +1,37 @@
+﻿<Page x:Class="BanAdmin.CreateBan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BanAdmin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateBan">
+
+    <Grid Name="pnlMainGrid" Background="Black">
+        <Border BorderThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Green" Margin="80,44,0,0"  Width="647" Height="344"></Border>
+        <TextBox HorizontalAlignment="Left" Margin="198,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" TextChanged="TextBox_TextChanged" FontSize="16" x:Name ="Input_Password"/>
+        <TextBlock HorizontalAlignment="Left" Margin="98,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="95"><Run Language="nb-no" Text="First name"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="518,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextChanged="TextBox_TextChanged" FontSize="16" x:Name ="LastName"/>
+        <TextBlock HorizontalAlignment="Left" Margin="418,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="95"><Run Language="nb-no" Text="Last name"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="98,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="95"><Run Language="nb-no" Text="Start date"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="350,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="22" Width="238" FontFamily="Toxigenesis Rg"><Run Language="nb-no" Text="Create ban"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="98,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="95"><Run Language="nb-no" Text="End"/><Run Text=" date"/></TextBlock>
+
+        <DatePicker HorizontalAlignment="Left" Margin="193,123,0,189" Name="StartDate"/>
+        <DatePicker HorizontalAlignment="Left" Margin="193,159,0,153" Name="EndDate"/>
+        <TextBlock HorizontalAlignment="Left" Margin="98,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="183"><Run Language="nb-no" Text="Description of person"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="98,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" TextChanged="TextBox_TextChanged" FontSize="16" x:Name ="DescriptionOfPerson" Height="68"/>
+        <RadioButton x:Name="Male" Content="Male" HorizontalAlignment="Left" Margin="419,125,0,0" VerticalAlignment="Top" GroupName="Gender" Width="99" Checked="Male_Checked" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="452,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="96"><Run Language="nb-no" Text="Male"/></TextBlock>
+        <RadioButton x:Name="Female" Content="Male" HorizontalAlignment="Left" Margin="419,155,0,0" VerticalAlignment="Top" GroupName="Gender" Width="99" Checked="Female_Checked" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="452,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="96"><Run Language="nb-no" Text="Female"/></TextBlock>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="419,226,0,0" VerticalAlignment="Top" Checked=" = FullBan_Checked" GroupName="Ban specification"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="535,226,0,0" VerticalAlignment="Top" Checked=" = PartialBan_Checked" GroupName="Ban specification"/>
+        <TextBlock HorizontalAlignment="Left" Margin="442,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="96"><Run Language="nb-no" Text="Total ban"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="557,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Green" FontWeight="Bold" FontSize="16" Width="96"><Run Language="nb-no" Text="Partial ban"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="418,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextChanged="TextBox_TextChanged" FontSize="16" x:Name ="PartialBanSpecification" Height="68"/>
+        <Button Content="Dashboard" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="611,351,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>

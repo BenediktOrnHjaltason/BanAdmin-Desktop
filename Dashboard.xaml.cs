@@ -30,6 +30,11 @@ namespace BanAdmin
 
         }
 
+        private void RegisterIncident(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("You clicked RegisteredIncident");
+        }
+
         private void OpenOverview(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("You clicked Overview");
@@ -44,5 +49,7 @@ namespace BanAdmin
         {
             Debug.WriteLine("You clicked Config!");
         }
+
+        
     }
 }
